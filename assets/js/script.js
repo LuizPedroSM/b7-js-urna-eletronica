@@ -16,8 +16,9 @@ let numero = '';
     for (let index = 0; index < etapa.numeros; index++) {
         if (index === 0) {
             numeroHTML += '<div class="numero pisca"></div>'        
+        } else{
+            numeroHTML += '<div class="numero"></div>'        
         }
-        numeroHTML += '<div class="numero"></div>'        
     }
 
     seuVotoPara.style.display = 'none';
@@ -29,7 +30,45 @@ let numero = '';
 })()
 
 function atualizaTela(){
-    console.log('Finalizou de digitar o voto')
+    let etapa = etapas[etapaAtual];
+    let candidato  = etapa.candidatos.filter((item)=>{
+        if (item.numero === numero) {
+            return true;
+        } else {
+            return false;
+        }
+    });
+    
+    if (candidato.length > 0 ) {
+        candidato = candidato[0];
+        console.log(candidato)
+        seuVotoPara.style.display = 'block';
+
+        descricao.innerHTML = `
+            Nome: ${candidato.nome} <br /> 
+            Partido: ${candidato.partido}  <br />        
+            Vice: ${candidato.partido}  <br />
+        `;
+
+        aviso.style.display = 'block';
+
+        let fotosHTML = '';
+        for (const i in candidato.fotos) {
+            fotosHTML += ` 
+            <div class="d-1-imagem">
+                <img src="/assets/img/${candidato.fotos[i].url}" alt="" />
+                ${candidato.fotos[i].legenda}
+            </div>
+          `;
+        }
+        lateral.innerHTML = fotosHTML;
+    } else {
+        seuVotoPara.style.display = 'block';
+        aviso.style.display = 'block';
+        descricao.innerHTML = `
+            <div class="aviso--grande pisca">VOTO NULO</div>
+        `;
+    }
 }
 
 function clicou(n){
