@@ -73,6 +73,7 @@ body {
   text-align: center;
   line-height: 40px;
   font-size: 25px;
+  margin-right: 1px;
 }
 .pisca {
   animation-name: pisca;
