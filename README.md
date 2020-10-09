@@ -19,6 +19,10 @@
 
 Urna Eletrônica é um projeto simples em Javascript, html e css. Foi feito durante o curso da [B7web](https://alunos.b7web.com.br/).
 
+## - 🌐 Web
+
+> https://luizpedrosm.github.io/b7-js-urna-eletronica/
+
 ## 📷 Imagens
 
 <h1 align="center">
