@@ -59,14 +59,14 @@ function atualizaTela(){
             if (candidato.fotos[i].pequeno) {
                 fotosHTML += ` 
                 <div class="d-1-imagem pequeno">
-                    <img src="/assets/img/${candidato.fotos[i].url}" alt="" />
+                    <img src="./assets/img/${candidato.fotos[i].url}" alt="" />
                     ${candidato.fotos[i].legenda}
                 </div>
                 `;
             } else{
                 fotosHTML += ` 
                 <div class="d-1-imagem">
-                    <img src="/assets/img/${candidato.fotos[i].url}" alt="" />
+                    <img src="./assets/img/${candidato.fotos[i].url}" alt="" />
                     ${candidato.fotos[i].legenda}
                 </div>
                 `;
